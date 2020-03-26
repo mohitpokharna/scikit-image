@@ -91,7 +91,7 @@ def label2rgb(label, image=None, colors=None, alpha=0.3,
         Label that's treated as the background.
     bg_color : str or array, optional
         Background color. Must be a name in `color_dict` or RGB float values
-        between [0, 1].
+        between [0, 1] or `None` (to make background label transparent).
     image_alpha : float [0, 1], optional
         Opacity of the image.
     kind : string, one of {'overlay', 'avg'}
@@ -135,7 +135,7 @@ def _label2rgb_overlay(label, image=None, colors=None, alpha=0.3,
         Label that's treated as the background.
     bg_color : str or array, optional
         Background color. Must be a name in `color_dict` or RGB float values
-        between [0, 1].
+        between [0, 1] or `None` (to make background label transparent).
     image_alpha : float [0, 1], optional
         Opacity of the image.
 
