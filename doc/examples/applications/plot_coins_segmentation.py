@@ -141,7 +141,8 @@ from skimage.color import label2rgb
 
 segmentation = ndi.binary_fill_holes(segmentation - 1)
 labeled_coins, _ = ndi.label(segmentation)
-image_label_overlay = label2rgb(labeled_coins, image=coins)
+# make the background label transparent
+image_label_overlay = label2rgb(labeled_coins, image=coins, bg_label=1, bg_color=None)
 
 fig, axes = plt.subplots(1, 2, figsize=(8, 3), sharey=True)
 axes[0].imshow(coins, cmap=plt.cm.gray)
